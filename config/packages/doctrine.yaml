@@ -1,0 +1,61 @@
+doctrine:
+    #    dbal:
+    #        # configure these for your database server
+    #        # use postgresql for PostgreSQL
+    #        # use sqlite for SQLite
+    #        driver: 'mysql'
+    #        server_version: '5.7'
+    #
+    #        # only needed for MySQL
+    #        charset: utf8mb4
+    #        default_table_options:
+    #            charset: utf8mb4
+    #            collate: utf8mb4_unicode_ci
+    #
+    #        url: '%env(resolve:DATABASE_URL)%'
+
+
+    dbal:
+        # configure these for your database server
+        connections:
+            local:
+                url: '%env(resolve:DATABASE_URL)%'
+                schema_filter: ~^(?!_)~
+                driver: 'pdo_mysql'
+                server_version: '5.5.5'
+                #charset: utf8mb4
+                charset: 'UTF8'
+                options:
+                    MYSQL_ATTR_INIT_COMMAND: 'SET NAMES "UTF8" COLLATE "utf8_general_ci"'
+                default_table_options:
+                    charset: 'UTF8'
+                    collate: 'utf8_general_ci'
+                    engine:  InnoDB
+
+
+    orm:
+        entity_managers:
+
+            local:
+                connection: local
+                mappings:
+                    Index:
+                        is_bundle: false
+                        type: annotation
+                        dir: '%kernel.project_dir%/src/SetupWizard/Index'
+                        prefix: 'App\SetupWizard\Index'
+                        alias: Index
+
+                    ListOfCategory:
+                        is_bundle: false
+                        type: annotation
+                        dir: '%kernel.project_dir%/src/Entity'
+                        prefix: 'App\Entity'
+                        alias: ListOfCategory
+
+                    Login:
+                        is_bundle: false
+                        type: annotation
+                        dir: '%kernel.project_dir%/src/Admin/Entity'
+                        prefix: 'App\Admin\Entity'
+                        alias: Login

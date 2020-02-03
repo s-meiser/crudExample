@@ -1,0 +1,52 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+#Index:
+#  path: /
+#  controller: App\Controller\ListOfCategoryController::index
+
+
+#Index:
+#  resource: ../src/Controller/
+#  type: annotation
+
+SetupWizard:
+  path: /
+  controller: App\Controller\Index::index
+
+Index:
+  path: /
+  controller: App\SetupWizard\Index\Controller\Index
+
+#Sites:
+#  path: /
+#  controller: App\SetupWizard\Sites\Controller\Sites
+
+#Admin:
+#    resource: ../src/Admin/Controller
+#    type: annotation
+
+#Login:
+#  resource: ../src/Admin/Controller
+#  type: annotation
+
+Login:
+  path: /login
+  controller: App\Admin\Security\LoginFormAuthenticator::login
+
+app_admin:
+  path: /admin
+  controller: App\Admin\Controller\Admin::index
+
+app_category:
+  path: /admin/category
+  controller: App\Admin\Controller\Category::index
+
+app_category_detail:
+  path: /admin/category/{id}
+  controller: App\Admin\Controller\Category::show
+
+Admin:
+  path: /admin
+  controller: App\Admin\Controller\Admin::index
