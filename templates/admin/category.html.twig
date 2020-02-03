@@ -1,0 +1,106 @@
+{% extends 'HTML5_Skeleton/html_adminHeader.twig' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block body %}
+
+
+
+
+    <div class="col-md-12 content">
+
+        <div class="row pl-5 pt-2 pr-5">
+            <div class="col-md-9 bg-light border-lightgrey p-3 mb-1">
+
+                <div class="row">
+                    <div class="col-md-9">
+                        <h4>Kategorie</h4>
+                        <text class="">Übersicht der Kategorien</text>
+                    </div>
+                    <div class="col-md-3 text-right">
+                        <i class="fas fa-plus-circle font-size-23 pt-3 color-green" data-toggle="modal" data-target="#exampleModal" onclick=""></i>
+
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-9 bg-light p-3">
+                <table class="table">
+                    <thead>
+                    <tr>
+
+                        <th scope="col">#</th>
+                        {% if data is not empty%}
+                            {% for key, value in data %}
+                                {% if loop.first %}
+                                    {% for k, v in value %}
+                                        {% if
+                                            k != 'id' %}
+                                            <th scope="col">
+                                                {{ k }}
+                                            </th>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    {% if data is not empty%}
+                        {% for key, value in data %}
+
+                            <tr onclick="window.location='{{ path('app_category_detail', {'id': value.id}) }}';">
+                                {% for k, v in value %}
+                                    <td scope="row">{{ v }} </td>
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal right fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="col-md-1 p-0">
+                        <button type="button" class="close p-0 m-0 float-none" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"><i class="fal fa-arrow-right"></i></span>
+                        </button>
+                    </div>
+                    <div class="col-md-6 pl-0">
+                        <h5 class="modal-title" id="exampleModalLabel">Create</h5>
+                    </div>
+                    <div class="col-md-5">
+
+                    </div>
+                </div>
+                <div class="modal-body">
+                    {% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                        <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
+                    {{ form_end(form) }}
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+
+
+    </script>
+{% endblock %}

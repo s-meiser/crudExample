@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<title>ListOfCategory index</title>
+
+{% block body %}
+    <h1>ListOfCategory index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Comment</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for list_of_category in list_of_categories %}
+            <tr>
+                <td>{{ list_of_category.id }}</td>
+                <td>{{ list_of_category.name }}</td>
+                <td>{{ list_of_category.comment }}</td>
+                <td>
+                    <a href="{{ path('list_of_category_show', {'id': list_of_category.id}) }}">show</a>
+                    <a href="{{ path('list_of_category_edit', {'id': list_of_category.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('list_of_category_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'HTML5_Skeleton/html_header.twig' %}
+
+{% block title %}Kategorie{% endblock %}
+
+{% block body %}
+    {% include "sidebar.html.twig" %}
+
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pr-5 pl-5">
+
+
+
+        <section class="pt-5 pb-5">
+
+            <div class="dropdown">
+                <button class="btn btn-input custom-select dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {% if data.data.listOfCategory is null %}
+                        Keine Kategorie vorhanden
+                    {% else %}
+                        Bitte wählen
+                    {% endif %}
+                </button>
+
+                <div id="loadBookingData" class="dropdown-menu col-sm-12" aria-labelledby="dropdownMenuButton" >
+                    <input id="setValue" name="loadBookingData" type="hidden" value="">
+                    {% if data.data.listOfCategory is not null %}
+
+                        {% for key, value in data.data.listOfCategory %}
+                            <a class="dropdown-item" onclick="submitForms(this, {{ value.name }})">
+                                <b>{{ value.name }}</b>
+                            </a>
+                        {% endfor  %}
+
+                    {% endif %}
+                </div>
+            </div>
+
+        </section>
+
+        <script>
+            function submitForms(event, id){
+                $('#setValue').val(id);
+                var html = $(event).html();
+                $('#dropdownMenuButton').empty();
+                $('#dropdownMenuButton').append(html);
+                $(event).closest('form').submit()
+            }
+        </script>
+
+    </main>
+{% endblock %}

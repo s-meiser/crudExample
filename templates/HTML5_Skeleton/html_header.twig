@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Setup Wizzard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset("Img/favicon.png") }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ asset("css/lib/bootstrap.min.css") }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset("css/lib/all.css") }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset("css/lib/jquery-ui.min.css") }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset("css/lib/dataTables.bootstrap4.min.css") }}"/>
+
+    <script src="{{ asset("js/lib/jquery.min.js") }}"></script>
+    <script src="{{ asset("js/lib/popper.min.js") }}"></script>
+    <script src="{{ asset("js/lib/bootstrap.min.js") }}"></script>
+    <script src="{{ asset("js/lib/jquery.dataTables.min.js") }}"></script>
+    <script src="{{ asset("js/lib/dataTables.bootstrap4.min.js") }}"></script>
+    <script src="{{ asset("js/lib/dataTables.colReorder.min.js") }}"></script>
+
+    <script>window.versionControll = new Date().getTime();</script>
+    <script src="{{ asset("js/lib/steal/steal.js") }}"
+            config="{{ asset("js/lib/config.js") }}"
+            main="app">
+    </script>
+
+
+
+    <!-- Eigene CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ asset("css/main.css?=v1.0.2") }}" >
+
+
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        {% block sidebar %}{% endblock %}
+        {% block body %}{% endblock %}
+{#
+        <ul>
+            <li>
+                <a href="index.php">Index</a>
+            </li>
+
+            <li>
+                <a href="index.php?section=Sites">Sites</a>
+            </li>
+        </ul>#}
+    </div>
+</div>
+
+</body>
+
+</html>

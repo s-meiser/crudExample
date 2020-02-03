@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Setup Wizzard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset("Img/favicon.png") }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ asset("css/lib/bootstrap.min.css") }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset("css/lib/all.css") }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset("css/lib/jquery-ui.min.css") }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset("css/lib/dataTables.bootstrap4.min.css") }}"/>
+
+
+
+    <script src="{{ asset("js/lib/jquery.min.js") }}"></script>
+    <script src="{{ asset("js/lib/popper.min.js") }}"></script>
+    <script src="{{ asset("js/lib/bootstrap.min.js") }}"></script>
+    <script src="{{ asset("js/lib/jquery.dataTables.min.js") }}"></script>
+    <script src="{{ asset("js/lib/dataTables.bootstrap4.min.js") }}"></script>
+    <script src="{{ asset("js/lib/dataTables.colReorder.min.js") }}"></script>
+
+
+    <script>window.versionControll = new Date().getTime();</script>
+    <script src="{{ asset("js/lib/steal/steal.js") }}"
+            config="{{ asset("js/lib/config.js") }}"
+            main="app">
+    </script>
+
+
+
+    <!-- Eigene CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ asset("css/main.css?=v1.0.2") }}" >
+    <link rel="stylesheet" type="text/css" href="{{ asset("css/fa.css?=v1.0.0") }}" >
+    <link rel="stylesheet" type="text/css" href="{{ asset("css/admin.css?=v1.0.1") }}" >
+
+
+</head>
+
+<body>
+<header id="mainHeader" role="banner" class="hidden-xs">
+    <nav role="navigation">
+        <div class="top-header">
+            <div class="navBurger text-center">
+                <a href="{{ path('app_admin') }}">
+                    <i class="logo fas fa-box-open"></i>
+                </a>
+            </div>
+        </div>
+
+        <ul class="menu-vertical-menu icon nav">
+            <li class="material-icons fal fa-th-list">
+                <a href="{{ path('app_category') }}">Kategorie</a>
+            </li>
+{#
+            <li class="material-icons fab fa-hornbill">
+                <a href="">Panel</a>
+            </li>
+
+            <li class="material-icons fab fa-hornbill"><a href="">Link</a></li>
+            <li class="material-icons fab fa-hornbill"><a href="">Link</a></li>
+            <li class="material-icons fab fa-hornbill"><a href="">Link</a></li>
+            <li class="material-icons fab fa-hornbill"><a href="">Link</a></li>
+            <li class="material-icons fab fa-hornbill"><a href="">Link</a></li>
+            <li class="material-icons fab fa-hornbill"><a href="">Link</a></li>
+            <li class="material-icons fab fa-hornbill"><a href="">Link</a></li>
+            <li class="material-icons fab fa-hornbill"><a href="">Link</a></li>
+            <li class="material-icons fab fa-hornbill"><a href="">Link</a></li>
+#}
+        </ul>
+
+    </nav>
+</header>
+
+<div class="col-md-12 text-left toolbar-top">
+    <div class="row ">
+
+
+        <div class="col-md-1 navBarAdmin pl-5 ">
+            <ul class="navBarAdminUl hidden-xs flex">
+                <li>
+                    {#<span>Hallo <b class="color-dark">{{user}}</b></span>#}
+                    <span>Admincenter</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-md-9 navBarAdmin">
+            <ul class="navBarAdminUl hidden-xs flex">
+                <li>
+                    <a href="javascript:void();">Kategorie</a>
+                    <ul>
+                        <li>
+                            <a href="{{ path('app_category') }}">
+                                <i class="fal fa-th-list"></i>
+                                <span class="title">Übersicht</span>
+                                <span class="descr">Übersicht der Kategorie</span>
+                            </a>
+                        </li>
+
+                        {#                            <li>
+                                                        <a href="blaaa">
+                                                            <i class="fab fa-battle-net"></i>
+                                                            <span class="title">Title</span>
+                                                            <span class="descr">Description</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="blaaa">
+                                                            <i class="fab fa-battle-net"></i>
+                                                            <span class="title">Title</span>
+                                                            <span class="descr">Description</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="blaaa">
+                                                            <i class="fab fa-battle-net"></i>
+                                                            <span class="title">Title</span>
+                                                            <span class="descr">Description</span>
+                                                        </a>
+                                                    </li>#}
+
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="col-md-1 text-right pt-4">
+            <a class="btn btn-outline-dark " href="{{ path('app_logout') }}">Logout</a>
+        </div>
+
+    </div>
+
+</div>
+
+
+{% block sidebar %}{% endblock %}
+<div class="container-fluid">
+    <div class="row">
+
+        {% block body %}{% endblock %}
+        {#
+                <ul>
+                    <li>
+                        <a href="index.php">Index</a>
+                    </li>
+
+                    <li>
+                        <a href="index.php?section=Sites">Sites</a>
+                    </li>
+                </ul>#}
+    </div>
+</div>
+
+</body>
+
+</html>

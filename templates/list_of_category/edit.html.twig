@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<title>Edit ListOfCategory</title>
+
+{% block body %}
+    <h1>Edit ListOfCategory</h1>
+
+    {{ include('list_of_category/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('list_of_category_index') }}">back to list</a>
+
+    {{ include('list_of_category/_delete_form.html.twig') }}
+{% endblock %}
