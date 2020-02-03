@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Muli:300,400,600,700,800,900&display=swap');
+
+* {
+	font-family: "Roboto", sans-serif;
+	font-size:12px;
+
+}
+
+body {
+	font-family: "Roboto", sans-serif;
+	background-color: #dde2e9;
+	font-weight: 400;
+	line-height: 1.5;
+}
+
+main {
+	margin-right: auto !important;
+}
+
+@media (min-width: 1440px){
+	.container {
+		max-width: 1640px;
+	}
+}
+
+@media (min-width: 576px){
+	.modal-dialog {
+		max-width: 900px;
+	}
+}
+
+.margin-bottom-0{
+	margin-bottom: 0;
+}
+.padding-0{
+	padding: 0;
+}
+
+.list-style-type-none{
+	list-style-type: none;
+}
+
+.bg-light {
+	background-color: #ffffff !important;
+}
+.bg-dark{
+	background-color: #343a40 !important;
+}
+
+.bg-grey{
+	background-color: #3a454d !important;
+}
+.sidebar{
+	background-color: #0f1c26 !important;
+}
+
+.vh-90{
+	height: 90vh;
+}
+
+section{
+	background-color: #ffffff;
+	padding: 10px;
+	box-shadow: 0 0 5px rgba(28, 39, 60, 0.2);
+}
+
+.box-headline{
+	color: #007bff;
+}
+
+.form-group .form-control {
+	padding-left: 0.75rem;
+}
+
+.form-group .form-control-icon {
+	position: absolute;
+	z-index: 2;
+	display: block;
+	right: 15px;
+	width: 2.375rem;
+	height: 2.375rem;
+	line-height: 2.375rem;
+	text-align: center;
+	pointer-events: none;
+}
+
+.form-control-icon{
+	color: #0080ff;
+}
+
+.btn-input{
+	text-align: left;
+}
+.btn-input:after{
+	display: none;
+}
+
+#loadBookingData > a:hover{
+	cursor: default;
+}
+
+
+.color-red{
+	color: #c56262;
+}
+
+.color-green{
+	color: green;
+}
+
+
+.color-yellow{
+	color: yellow;
+}
+
+
+.alert-danger{
+	background: #721c24;
+	/* border-color: #c56262; */
+	color: #FFF;
+}
+
+.alert-danger > button.close {
+	opacity: 1;
+	color: #FFF;
+}
+
+ul.navbar-nav > li.nav-item > a:hover{
+	cursor: pointer;
+}
+
+a.navbar-brand {
+	cursor: pointer;
+}
+
+.progressBar{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 100000;
+}
+
+.miniMenu {
+	border: 1px solid #c7c7c7;
+	padding: 5px;
+	border-radius: 10px;
+}
+
+.headerNav{
+	background-color: #0f1c26;
+	color: #FFF;
+}
+
+.card-header{
+	color: #9fa4a8;
+	background-color: #0f1c26;
+	cursor: pointer;
+}
+
+
+.card {
+	border: none;
+
+}
+
+.sideBarMenu > a > li{
+	color: #d3d5d7;
+}
+.sideBarMenu > a > li > text {
+	color: #d3d5d7;
+	font-size: 14px;
+}
+
+.sideBarMenu > a > li {
+	border-left: 4px solid transparent !important;
+}
+
+.sideBarMenu > a:hover{
+	text-decoration: none;
+}
+
+.sideBarMenu > a:hover > li > text{
+	color: #FFF;
+}
+
+.sideBarMenu > a > li.active {
+	border-radius: unset;
+	background-color: #172b3b !important;
+	border-left: 4px solid #007bff !important;
+}
+
+#newAccountingLabel{
+	color: #212529;
+}
+
+button.plusNeu{
+	box-shadow: 0 0 0 0.2rem rgba(0,123,255,.45);
+}
+
+
+.cursor-pointer{
+	cursor: pointer;
+}
+
+

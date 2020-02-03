@@ -1,0 +1,361 @@
+body {
+    background-color: #f3f3f3;
+}
+
+.adminMenu-padding{
+    padding: 22px 10px;
+}
+
+header#mainHeader{
+    width: 65px;
+    height: 100%;
+    left: 0;
+    transition: left 0.5s ease-in-out 0.2s;
+    position: fixed;
+    display: inline-block;
+    background-color: #393939;
+    z-index: 1000;
+}
+
+.navBarAdminUl {
+    text-align: left;
+    float: left;
+    margin-left: 25px;
+}
+.navBarAdminUl, .navBarAdminUl > li > ul, .navBarAdminUl > li > ul > li {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+.navBarAdminUl > li {
+    display: block;
+    float: left;
+    position: relative;
+}
+
+.navBarAdminUl > li:hover > a {
+    color: #262626;
+}
+.navBarAdminUl > li > a {
+    display: flex;
+    line-height: 50px;
+    padding: 22px 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #999;
+    font: 11px Helvetica, Arial, sans-serif;
+}
+
+.navBarAdminUl > li > span {
+    display: block;
+    padding: 22px 10px;
+    text-decoration: none;
+    text-transform: none;
+    font-weight: 400;
+    font-size: 20px;
+    color: #262626 !important;
+    font-family: Helvetica, Arial, sans-serif !important;
+}
+
+.navBarAdminUl > li:hover > ul {
+    display: block;
+}
+.navBarAdminUl > li > ul {
+    position: absolute;
+    top: 35px;
+    left: 5px;
+    -webkit-columns: 2 2px;
+    -moz-columns: 2 2px;
+    columns: 2 2px;
+    border-top: none;
+    background-color: white;
+    width: 500px;
+    padding: 10px 15px 15px;
+    display: none;
+    box-shadow: 0 0 20px 5px #0000001a;
+    font-size: 13px;
+}
+.navBarAdminUl > li > ul > li {
+    display: block;
+}
+.navBarAdminUl > li > ul > li > a {
+    padding: 10px;
+    text-decoration: none;
+    color: #666666;
+    display: inline-block;
+    position: relative;
+}
+.navBarAdminUl > li > ul > li > a > i {
+    position: absolute;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    color: #666666;
+    font-size: 3em;
+    width: 55px;
+    text-align: center;
+}
+
+.navBarAdminUl > li > ul > li > a > i:before {
+    font-style: normal !important;
+    font-weight: 300 !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+.navBurger{
+    background: #404040;
+    height: 64px;
+}
+.logo{
+    font-size: 31px;
+    padding: 10px;
+    color: orange;
+    line-height: 50px;
+}
+
+.menu-vertical-menu{
+    position: absolute !important;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    margin-top: 20%;
+}
+.menu-vertical-menu:before{
+    content: " ";
+    display: table;
+}
+
+.material-icons {
+    font-size: 14px;
+    width: 60px;
+    height: 40px;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.material-icons:before {
+    z-index: 10;
+    background-color: transparent;
+    position: absolute;
+    left: 19px;
+    top: 0px;
+    -webkit-transform: scale(1) translate3d(0, 0, 0);
+    transform: scale(1) translate3d(0, 0, 0);
+    transition: all 0.2s ease-in-out;
+    color: white;
+    font-size: 24px;
+}
+
+.material-icons ul li:before {
+    z-index: 10;
+    background-color: transparent;
+    position: absolute;
+    left: 19px;
+    top: 0px;
+    -webkit-transform: scale(1) translate3d(0, 0, 0);
+    transform: scale(1) translate3d(0, 0, 0);
+    transition: all 0.2s ease-in-out;
+    color: white;
+    font-size: 24px;
+}
+
+
+.material-icons ul li.active:before, header#mainHeader nav ul li:hover:before {
+    -webkit-transform: scale(1.5) translate3d(0, 0, 0);
+    transform: scale(1.5) translate3d(0, 0, 0);
+}
+.material-icons nav:hover li a {
+    left: 70px;
+    opacity: 1;
+    transition-duration: 0.4s;
+    transition-property: left, opacity;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    top: 5px;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 900;
+    margin-left: 10px;
+}
+nav:hover:before {
+    width: 160px;
+    transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+li a:hover, nav ul li a:active, nav ul li a:visited, nav ul li a:focus {
+    background-color: transparent !important;
+    color: white;
+    font-family: Helvetica, Arial, sans-serif !important;
+}
+nav ul li a {
+    width: 150px;
+    color: white;
+    position: relative;
+    z-index: 0;
+    opacity: 0;
+    left: -80px;
+    text-transform: uppercase;
+    transition: left 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045), opacity 0.15s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    color: #fff;
+    text-decoration: none;
+}
+
+nav:before {
+    content: ' ';
+    height: 100%;
+    width: 0px;
+    background-color: #333;
+    position: absolute;
+    left: 60px;
+    transition: width 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+nav:hover li a {
+    left: 70px;
+    opacity: 1;
+    transition-duration: 0.4s;
+    transition-property: left, opacity;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    top: 5px;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 900;
+    margin-left: 10px;
+}
+
+.nav > li > a {
+    position: relative;
+    display: block;
+    padding: 0px;
+}
+
+.navBarAdminUl > li > ul > li > a > span.title {
+    font-weight: bold;
+}
+.navBarAdminUl > li > ul > li > a > span {
+    display: block;
+    margin-left: 70px;
+}
+.navBarAdminUl > li > ul > li > a > span.descr {
+    font-size: 0.8em;
+    color: #b3b3b3;
+}
+
+.navBarAdminUl > li > ul > li > a:hover > span.title {
+    color: #262626;
+}
+.navBarAdminUl > li > ul > li > a:hover > span.descr {
+    color: #8c8c8c;
+}
+.navBarAdminUl > li > ul > li > a:hover > i {
+    -webkit-transform: translateX(-3px) translateZ(0px);
+    -moz-transform: translateX(-3px) translateZ(0px);
+    -ms-transform: translateX(-3px) translateZ(0px);
+    -o-transform: translateX(-3px) translateZ(0px);
+    transform: translateX(-3px) translateZ(0px);
+    color: #262626;
+}
+
+.toolbar-top{
+    background-color: #f3f3f3 !important;
+    color: #262626 !important;
+    position: fixed;
+    z-index: 9;
+    padding-left: 65px;
+    left: 0;
+}
+.bg-light-grey{
+    background-color: #f3f3f3;
+}
+
+.color-dark{
+    color: #262626;
+}
+.color-999{
+    color: #999;
+}
+
+.navBarAdmin{
+    line-height: 20px;
+    font-size: 11px;
+    font-family: Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.content{
+    position: fixed;
+    padding-left: 65px;
+    top: 65px;
+}
+
+.border-lightgrey{
+    border-color: #e0e0e0 !important;
+}
+
+.font-size-23{
+    font-size: 23px;
+}
+
+.modal.left .modal-dialog,
+.modal.right .modal-dialog {
+    position: fixed;
+    margin: auto;
+    width: 400px;
+    height: 100%;
+    -webkit-transform: translate3d(0%, 0, 0);
+    -ms-transform: translate3d(0%, 0, 0);
+    -o-transform: translate3d(0%, 0, 0);
+    transform: translate3d(0%, 0, 0);
+}
+
+.modal.left .modal-content,
+.modal.right .modal-content {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.modal.left .modal-body,
+.modal.right .modal-body {
+    padding: 15px 15px 80px;
+}
+
+
+/*Right*/
+.modal.right.fade .modal-dialog {
+    right: -400px;
+    -webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
+    -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
+    -o-transition: opacity 0.3s linear, right 0.3s ease-out;
+    transition: opacity 0.3s linear, right 0.3s ease-out;
+}
+
+.modal.right.fade.show .modal-dialog {
+    right: 0;
+}
+
+@media (min-width: 576px){
+    .modal-dialog-scrollable {
+        max-height: none;
+    }
+}
+.modal-dialog-scrollable .modal-content {
+    max-height: none;
+}
+
+.side-info{
+    z-index: 1001;
+    position: fixed;
+    width: 24%;
+}
